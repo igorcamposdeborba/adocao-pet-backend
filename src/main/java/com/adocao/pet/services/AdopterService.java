@@ -146,11 +146,11 @@ public class AdopterService {
 		}
 		
 		if (adopterDTO.getEmail().equals("@")) {
-			throw new IllegalFormatException("Formato errado de E-MAIL. Exemplo: teste@hotmail.com");
+			throw new NullPointerException("Formato errado de E-MAIL. Exemplo: teste@hotmail.com");
 		}
 		
 		if (!adopterDTO.getEmail().contains("@")) {
-			throw new IllegalFormatException("Formato errado de E-MAIL. Exemplo: teste@hotmail.com");
+			throw new NullPointerException("Formato errado de E-MAIL. Exemplo: teste@hotmail.com");
 		}
 	}
 	
