@@ -2,12 +2,10 @@ package com.adocao.pet.entities.dtos;
 
 import java.io.Serializable;
 import java.time.Instant;
+
 import com.adocao.pet.entities.Adopter;
 import com.adocao.pet.entities.AdopterPetAssociation;
 import com.adocao.pet.entities.Pet;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;

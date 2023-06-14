@@ -1,12 +1,7 @@
 package com.adocao.pet.services;
 
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.Arrays;
-import java.util.Base64;
 import java.util.HashSet;
 import java.util.Set;
 
