@@ -80,7 +80,6 @@ public class AdopterService {
 		// Encontrar Adopter pelo email e validar exceptions
 		Adopter newAdopter = findByEmail(adopterDTO.getEmail());
 		Optional<Adopter> oldAdopter = adopterRepository.findByEmail(adopterDTO.getEmail());
-		validateName(adopterDTO);
 		validateEmail(adopterDTO);
 		validateIsPresentName(adopterDTO);
 		validateTelephone(adopterDTO);
@@ -136,13 +135,7 @@ public class AdopterService {
 		return adopterPetAssociationRepository.save(adopterPetAssociation); // Salvar no banco de dados a classe de associação
 	}	
 	
-	// VALIDAÇÃO Obrigatória
-	private void validateName(AdopterDTO adopterDTO) {
-		if (adopterDTO.getName().equals(" ") || adopterDTO.getName().equals("-")) {
-			throw new NullPointerException("O campo NOME não pode estar vazio");
-		}
-	}
-	
+	// VALIDAÇÃO Obrigatória	
 	private void validateEmail(AdopterDTO adopterDTO) {
 		if (adopterDTO == null) {
 			throw new NullPointerException("O campo E-MAIL é obrigatório");
@@ -152,7 +145,7 @@ public class AdopterService {
 			throw new IllegalFormatException("Formato errado de E-MAIL. Exemplo: teste@hotmail.com. Não use o e-mail do exemplo.");
 		}
 		
-		if (!adopterDTO.getEmail().contains("@") || adopterDTO.getEmail().equals("@")) {
+		if (adopterDTO.getEmail().equals("@") || !adopterDTO.getEmail().contains("@")) {
 			throw new IllegalFormatException("Formato errado de E-MAIL. Exemplo: teste@hotmail.com");
 		}
 	}
@@ -165,7 +158,7 @@ public class AdopterService {
 		if (adopterDTO.getName() == null) { // Validar se existe o nome do adotante no parâmetro para a requisição
 			throw new NullPointerException("O campo NOME é obrigatório");
 		}
-		if (adopterDTO.getName().equals(" ")) { // Validar se o nome não tem só um espaço em branco
+		if (adopterDTO.getName().equals(" ") || adopterDTO.getName().equals("-")) { // Validar se o nome não tem só um espaço em branco
 			throw new NullPointerException("O campo NOME não pode estar vazio");
 		}
 	}
