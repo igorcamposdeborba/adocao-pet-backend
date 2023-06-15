@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.adocao.pet.entities.Adopter;
 import com.adocao.pet.entities.AdopterPetAssociation;
-<<<<<<< HEAD
 import com.adocao.pet.entities.Pet;
-=======
->>>>>>> 241ffd7c7151e400f15864fd1aa9290074e1a59c
 import com.adocao.pet.entities.dtos.AdopterDTO;
 import com.adocao.pet.entities.dtos.AdopterPetAssociationDTO;
 import com.adocao.pet.entities.dtos.PetDTO;
