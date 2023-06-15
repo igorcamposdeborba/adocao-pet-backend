@@ -24,8 +24,8 @@ public class Adopter implements Serializable {
 	private Integer id;
 	@NotNull
 	private String name;
-	// @NotNull
 	@Column(unique = true) // Banco de dados não aceita valores repetidos em diferentes linhas/registro de e-mail
+	@NotNull
 	private String email;
 	@NotNull
 	private String telephone;
