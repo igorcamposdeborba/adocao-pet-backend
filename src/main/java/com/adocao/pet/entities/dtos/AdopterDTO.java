@@ -19,9 +19,9 @@ public class AdopterDTO implements Serializable {
 	private Integer id;
 	@NotNull(message = "Campo NOME é obrigatório")
 	private String name;
+	// @NotNull(message = "Campo EMAIL é obrigatório")
+	// @Email (message = "Informe o EMAIL no formato válido")
 	@Column(unique = true) // Banco de dados não aceita valores repetidos em diferentes linhas/registro de e-mail
-	@NotNull(message = "Campo EMAIL é obrigatório")
-	@Email (message = "Informe o EMAIL no formato válido")
 	private String email;
 	@NotNull(message = "Campo TELEFONE é obrigatório")
 	private String telephone;
