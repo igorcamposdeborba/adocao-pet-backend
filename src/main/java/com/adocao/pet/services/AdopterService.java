@@ -7,7 +7,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.annotation.Validated;
 
 import com.adocao.pet.entities.Adopter;
 import com.adocao.pet.entities.AdopterPetAssociation;
@@ -17,6 +16,7 @@ import com.adocao.pet.repositories.AdopterPetAssociationRepository;
 import com.adocao.pet.repositories.AdopterRepository;
 import com.adocao.pet.repositories.PetRepository;
 import com.adocao.pet.services.exceptions.IllegalFormatException;
+import com.adocao.pet.services.exceptions.MethodArgumentNotValidException;
 import com.adocao.pet.services.exceptions.ObjectNotFoundException;
 
 import jakarta.validation.Valid;
@@ -146,7 +146,7 @@ public class AdopterService {
 		}
 		
 		if (!adopterDTO.getEmail().contains("@") || adopterDTO.getEmail().equals("@")) {
-			throw new IllegalFormatException("Formato errado de E-MAIL. Exemplo: teste@hotmail.com");
+			throw new MethodArgumentNotValidException("Formato errado de E-MAIL. Exemplo: teste@hotmail.com"); // @Valid do spring boot: validação dos parâmetros recebidos do request
 		}
 	}
 	
