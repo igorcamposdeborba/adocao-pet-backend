@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServlet;
 @WebServlet("/api/*")
 @ServletComponentScan // listener para a configuração do CORS origin (se estiver executando localmente o Spring Boot e Angular a partir de portas diferentes)
 public class AdocaoPetApplication extends HttpServlet  {
-	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AdocaoPetApplication.class, args);
